@@ -3,12 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import fastClick from 'fastClick'
-import './assets/styles/reset.css' // 引入 reset.css
-import './assets/styles/border.css' // 引入 border.css
+import fastClick from 'fastClick' // 引入 fastClick
+import 'styles/reset.css' // 引入 reset.css
+import 'styles/border.css' // 引入 border.css
+import 'styles/iconfont.css' // 引入 iconfont.css
 
 Vue.config.productionTip = false
-fastClick.attach(document.body)
+fastClick.attach(document.body) // 使用 fastClick 库
 
 /* eslint-disable no-new */
 new Vue({

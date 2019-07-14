@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/pages/home/Home' // 引入组件，其中 @ 表示 src/ 文件夹
+import Home from '@/pages/home/Home' // 引入组件，其中 @ 表示 src/ 文件夹。@ 这个符号是在 build/webpack.base.conf.js 中的 alias 定义的
 
 Vue.use(Router)
 
