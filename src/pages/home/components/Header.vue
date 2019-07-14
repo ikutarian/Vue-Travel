@@ -24,6 +24,7 @@ export default {
 
 <style lang="stylus" scoped>
   @import '~styles/varibles.styl' /* 引入样式的全局配置 */
+
   .header
     display: flex
     line-height: .86rem
