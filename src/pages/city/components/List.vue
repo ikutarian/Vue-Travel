@@ -39,9 +39,9 @@ export default {
   },
   methods: {
     handleCityClick (city) {
-      // 调用vuex的dispatch方法，传递changeCity事件和cityName数据
-      // /src/store.index.js中的actions就能接收到了
-      this.$store.dispatch('changeCity', city)
+      // 调用vuex的commit方法，传递changeCity事件和city数据
+      // /src/store.index.js中的mutations就能接收到了
+      this.$store.commit('changeCity', city)
     }
   },
   mounted () {
