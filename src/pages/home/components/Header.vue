@@ -10,7 +10,7 @@
       </div>
       <router-link to="/city"><!-- 点击这一块区域，路由到 /list -->
         <div class="header-right">
-          {{ city }}
+          {{ this.$store.state.city }}<!-- 引用vuex中state存放的值 -->
           <span class="iconfont arrow-icon">&#xe64a;</span>
         </div>
       </router-link>
@@ -20,10 +20,7 @@
 
 <script>
 export default {
-  name: 'HomeHeader',
-  props: {
-    city: String
-  }
+  name: 'HomeHeader'
 }
 </script>
 
