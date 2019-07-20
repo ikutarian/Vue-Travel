@@ -10,10 +10,10 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {
+    proxyTable: { // Mock数据的配置
       '/api': {
-        target: 'http://localhost:8080',
-        pathRewrite: {
+        target: 'http://localhost:8080', // 如果时前后端联调，只需要把url改一下
+        pathRewrite: { // 如果时前后端联调，把pathRewrite的部分全部注释掉即可
           '^/api': '/static/mock/'
         }
       }
