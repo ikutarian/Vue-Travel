@@ -42,6 +42,8 @@ export default {
       // 调用vuex的commit方法，传递changeCity事件和city数据
       // /src/store.index.js中的mutations就能接收到了
       this.$store.commit('changeCity', city)
+      // 利用Vue-Router的编程式导航（https://router.vuejs.org/zh/guide/essentials/navigation.html）跳转到首页
+      this.$router.push('/')
     }
   },
   mounted () {
