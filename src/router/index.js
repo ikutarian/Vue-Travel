@@ -25,5 +25,10 @@ export default new Router({
       name: 'Detail',
       component: Detail
     }
-  ]
+  ],
+  // 当页面切换的时候，让页面始终回到最顶部
+  // 文档在[Vue Router的滚动行为](https://router.vuejs.org/zh/guide/advanced/scroll-behavior.html)
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })
