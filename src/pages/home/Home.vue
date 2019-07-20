@@ -59,6 +59,7 @@ export default {
   },
   activated () {
     // 当页面重新显示的时候，会执行这个生命周期方法
+    // 所以，如果有使用<keep-alive>标签，那么就需要与activated()生命周期方法一起配合使用，比如重新发起网络请求获取新的数据
     if (this.lastCity !== this.city) {
       this.lastCity = this.city
       this.getHomeInfo()
