@@ -12,7 +12,7 @@
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
         <div class="button-list">
-          <div class="button-wrapper" v-for="item in hot" :key="item.id">
+          <div class="button-wrapper" v-for="item in hot" :key="item.id" @click="handleCityClick(item.name)">
             <div class="button">{{ item.name }}</div>
           </div>
         </div>
@@ -36,6 +36,13 @@ export default {
     hot: Array,
     cities: Object,
     letter: String
+  },
+  methods: {
+    handleCityClick (city) {
+      // 调用vuex的dispatch方法，传递changeCity事件和cityName数据
+      // /src/store.index.js中的actions就能接收到了
+      this.$store.dispatch('changeCity', city)
+    }
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)
