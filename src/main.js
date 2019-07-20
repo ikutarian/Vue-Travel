@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store/index' // 引入vuex的配置
 import VueAwesomeSwiper from 'vue-awesome-swiper' // 引入 VueAwesomeSwiper
 import fastClick from 'fastClick' // 引入 fastClick
 import 'styles/reset.css' // 引入 reset.css
@@ -17,7 +18,8 @@ Vue.use(VueAwesomeSwiper) // 使用 VueAwesomeSwiper 库
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
+  router, // 路由
+  store, // vuex
   components: { App },
   template: '<App/>'
 })
