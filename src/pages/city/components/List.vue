@@ -5,7 +5,7 @@
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">{{ this.$store.state.city }}</div>
+            <div class="button">{{ currentCity }}</div><!-- 引用vuex中state存放的值 -->
           </div>
         </div>
       </div>
@@ -29,6 +29,7 @@
 
 <script>
 import Bscroll from 'better-scroll'
+import { mapState } from 'vuex'
 
 export default {
   name: 'CityList',
@@ -36,6 +37,11 @@ export default {
     hot: Array,
     cities: Object,
     letter: String
+  },
+  computed: {
+    ...mapState({
+      currentCity: 'city'
+    }) // 将vuex中的city映射到计算属性的currentCity之中
   },
   methods: {
     handleCityClick (city) {
