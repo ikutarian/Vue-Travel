@@ -5,7 +5,7 @@
     </div>
     <div class="search-content" ref="search" v-show="keyword">
       <ul>
-        <li class="search-item border-bottom" v-for="item in list" :key="item.id">{{ item.name }}</li>
+        <li class="search-item border-bottom" v-for="item in list" :key="item.id" @click="handleCityClick(item.name)">{{ item.name }}</li>
         <li class="search-item border-bottom" v-show="hasNoData">没有找到匹配数据</li>
       </ul>
     </div>
@@ -54,6 +54,13 @@ export default {
         }
         this.list = result
       }, 100) // 延时100毫秒再执行，可以提升性能
+    }
+  },
+  methods: {
+    handleCityClick (city) {
+      // 调用vuex的commit方法，传递changeCity事件和city数据
+      // /src/store.index.js中的mutations就能接收到了
+      this.$store.commit('changeCity', city)
     }
   },
   mounted () {
