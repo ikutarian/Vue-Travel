@@ -37,7 +37,13 @@ export default {
     }
   },
   activated () {
+    // 这是全局事件绑定，因为window是全局对象
+    // 因此要记得解绑，可以在deactivated()生命周期里进行解绑
     window.addEventListener('scroll', this.handleScroll)
+  },
+  deactivated () { // 页面被隐藏或者将被替换为新页面时，会调用这个生命周期函数
+    // 解绑全局事件
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
